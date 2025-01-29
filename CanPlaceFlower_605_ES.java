@@ -20,6 +20,21 @@ public class CanPlaceFlower_605_ES {
         return maxF >= n;
     }
 
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+        int len = flowerbed.length;
+
+        long count = IntStream.range(0, len)
+            .filter(i -> flowerbed[i] == 0)
+            .filter(i -> (i == 0 || flowerbed[i - 1] == 0) && (i == len - 1 || flowerbed[i + 1] == 0))
+            .map(i -> { 
+                flowerbed[i] = 1; 
+                return 1; 
+            })
+            .count();
+        
+        return count >= n;
+    }
+
     public static void main(String[] args) {
         int[] flowerbed = {0,0};
         int n = 1;
