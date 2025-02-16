@@ -1,1 +1,6 @@
-background job
+MSE : 0.0601
+RMSE: 0.2452
+MAE : 0.1843
+R2  : 0.4637\
+
+L2
